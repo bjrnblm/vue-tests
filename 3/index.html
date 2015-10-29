@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+
+        <form action="done.html" @submit.prevent="handleForm">
+            <button type="submit">
+                Submit me
+            </button>
+        </form>
+
+        <button type="submit" @click="updateCount">
+            Update {{ count }}
+        </button>
+
+    </div>
+    <script src="http://cdn.jsdelivr.net/vue/1.0.3/vue.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+
+            data: {
+                count: 0
+            },
+
+            methods: {
+                handleForm: function() {
+                    alert('handled');
+                },
+                updateCount: function() {
+                    this.count++
+                }
+            }
+        });
+    </script>
+</body>
+</html>
