@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        span{
+            display: block;
+            color: red;
+            font-style: italic;
+        }
+
+        textarea{
+            min-width: 200px;
+            min-height: 100px;
+        }
+
+        button{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <form>
+            <span class="error" v-show="!message">
+                You must enter a message
+            </span>
+            <textarea v-model="message"></textarea>
+            <button type="submit" v-show="message">
+                Send Message
+            </button>
+        </form>
+    </div>
+    <script src="http://cdn.jsdelivr.net/vue/1.0.3/vue.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: ''
+            }
+        });
+    </script>
+</body>
+</html>
